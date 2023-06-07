@@ -5,7 +5,7 @@ defmodule DataOperations.RestaurantsTest do
 
   test "customers visited the resturant 'the-restaurant-at-the-end-of-the-universe'" do
     resturant = "the-restaurant-at-the-end-of-the-universe"
-    assert 37230 == Restaurants.visited_customers_count(resturant)
+    assert 37_230 == Restaurants.visited_customers_count(resturant)
   end
 
   test "customers visited the resturant that doesnot-exist" do
@@ -18,7 +18,7 @@ defmodule DataOperations.RestaurantsTest do
 
     assert %Money{amount: amount, currency: :USD} = Restaurants.total_money_made(resturant)
     assert 18_694_400 == amount
-    assert 18_694_4 == amount / 100
+    assert 186_944 == amount / 100
   end
 
   test "money make by resturant that doesnot-exist" do
@@ -104,7 +104,7 @@ defmodule DataOperations.RestaurantsTest do
 
     assert %{visitor_count: total_visitors, store: store} = most_visited_resturant
     assert "johnnys-cashew-stand" == store
-    assert 37909 == total_visitors
+    assert 37_909 == total_visitors
   end
 
   defp get_resturant(resturants, resturant_name) do
