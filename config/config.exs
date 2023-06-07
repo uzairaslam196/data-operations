@@ -10,6 +10,7 @@ import Config
 config :data_operations,
   ecto_repos: [DataOperations.Repo]
 
+config :money, default_currency: :USD
 
 # Configures Elixir's Logger
 config :logger, :console,

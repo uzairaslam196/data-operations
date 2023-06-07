@@ -10,7 +10,8 @@ defmodule DataOperations.MixProject do
       compilers: Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      dialyzer: [plt_add_apps: [:mix], plt_file: {:no_warn, "priv/plts/dialyzer.plt"}]
     ]
   end
 
@@ -33,9 +34,18 @@ defmodule DataOperations.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:ecto_sql, "~> 3.6"},
-      {:postgrex, ">= 0.0.0"}
+      [
+        {:ecto_sql, "~> 3.6"},
+        {:postgrex, ">= 0.0.0"},
+        {:csv, "~> 3.0"},
+        {:money, "~> 1.12"}
+      ],
+      [
+        {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
+        {:dialyxir, "~> 1.3", only: [:dev, :test], runtime: false}
+      ]
     ]
+    |> Enum.concat()
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
