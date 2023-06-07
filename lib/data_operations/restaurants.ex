@@ -49,7 +49,7 @@ defmodule DataOperations.Restaurants do
   end
 
   @doc """
-  Returns map with most_visited_resturant and customer who visited most stores
+  Returns map with most_visited_restaurant and customer_visited_most_stores
 
   ## Examples
 
@@ -90,7 +90,9 @@ defmodule DataOperations.Restaurants do
   end
 
   @doc """
-  Returns a information of popular dish with each resturant.
+  Returns information about the most popular dishes at each restaurant. The most popular dish is
+  the one that is served to customers the most times.
+
   concise_name: It's a resturant name
   food: it's a dish name
   food_count: Number of times served
@@ -131,7 +133,9 @@ defmodule DataOperations.Restaurants do
   end
 
   @doc """
-  Returns a information of profitable dish with each resturant
+  Returns a list of profitable dishes for each restaurant. The most profitable dish is the one
+  that made maximum money.
+
   concise_name: It's resturant name
   food: it's dish name
   food_cost: Total money made
