@@ -7,7 +7,8 @@ defmodule DataOperations.Restaurants do
   import Ecto.Query, only: [from: 2]
 
   @doc """
-  Returns the total count of visited customers for any resturant
+  Returns the total count of visited customers for any resturant.
+  Note: Anyone who visits the same restaurant more than once will be counted as multiple customers.
 
   ## Examples
 
@@ -49,7 +50,7 @@ defmodule DataOperations.Restaurants do
   end
 
   @doc """
-  Returns map with most_visited_restaurant and customer_visited_most_stores
+  Returns map with most_visited_restaurant and customer_visited_most_stores.
 
   ## Examples
 
